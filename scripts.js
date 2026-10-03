@@ -1,5 +1,5 @@
 
-const API_URL = "http://localhost:8000/predict";
+const API_URL = "https://mental-health-score-predictor-7w6s.onrender.com";
 
 
 // Get HTML elements
