@@ -1,5 +1,5 @@
 
-const API_URL = "https://mental-health-score-predictor-7w6s.onrender.com";
+const API_URL = "https://mental-health-score-predictor-7w6s.onrender.com/predict";
 
 
 // Get HTML elements
