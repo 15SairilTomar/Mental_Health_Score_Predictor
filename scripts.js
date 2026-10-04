@@ -575,7 +575,7 @@ form
 async function loadFeatureImportance() {
 
     const response = await fetch(
-        "https://mental-health-score-predictor-f.onrender.com/feature-importance"
+        "https://mental-health-score-predictor-7w6s.onrender.com/feature-importance"
     );
 
     const features = await response.json();
