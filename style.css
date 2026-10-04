@@ -562,3 +562,33 @@ footer {
         flex: auto;
     }
 }
+/* Updated*/
+.feature-item {
+    margin-bottom: 18px;
+}
+
+.feature-name {
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+
+.feature-bar {
+    width: 100%;
+    height: 10px;
+    background: #e5e7eb;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.feature-fill {
+    height: 100%;
+    background: #4f46e5;
+    border-radius: 10px;
+}
+
+.feature-value {
+    font-size: 13px;
+    margin-top: 4px;
+    color: #666;
+}
+/* Updated*/

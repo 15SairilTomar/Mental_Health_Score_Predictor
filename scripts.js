@@ -571,3 +571,41 @@ form
         );
 
     });
+// Updated
+async function loadFeatureImportance() {
+
+    const response = await fetch(
+        "https://mental-health-score-predictor-f.onrender.com/feature-importance"
+    );
+
+    const features = await response.json();
+
+    const container = document.getElementById("featureImportance");
+
+    container.innerHTML = "";
+
+    features.forEach(item => {
+
+        const percentage = (item.importance * 100).toFixed(1);
+
+        container.innerHTML += `
+            <div class="feature-item">
+                <div class="feature-name">
+                    ${item.feature}
+                </div>
+
+                <div class="feature-bar">
+                    <div class="feature-fill"
+                         style="width: ${percentage}%">
+                    </div>
+                </div>
+
+                <div class="feature-value">
+                    ${percentage}%
+                </div>
+            </div>
+        `;
+    });
+}
+loadFeatureImportance();
+//Updated

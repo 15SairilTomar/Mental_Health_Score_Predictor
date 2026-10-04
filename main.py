@@ -15,6 +15,39 @@ app.add_middleware(
 )
 
 
+# Updated 
+@app.get("/feature-importance")
+def feature_importance():
+
+    # Get preprocessing step
+    preprocessor = model.named_steps["preprocessor"]
+
+    # Get Random Forest model
+    rf_model = model.named_steps["random forest"]
+
+    # Get feature names after preprocessing
+    feature_names = preprocessor.get_feature_names_out()
+
+    # Get importance values
+    importances = rf_model.feature_importances_
+
+    # Combine names + importance
+    features = [
+        {
+            "feature": feature_names[i],
+            "importance": float(importances[i])
+        }
+        for i in range(len(feature_names))
+    ]
+
+    # Sort from highest to lowest
+    features.sort(key=lambda x: x["importance"], reverse=True)
+
+    # Return top 10
+    return features[:10]
+#Updated
+
+
 class StudentData(BaseModel): # Pydantic Model 
     Age :                   int = Field(..., ge=10, le=100)
     Gender :                Literal['Male', 'Female']
